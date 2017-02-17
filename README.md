@@ -65,7 +65,7 @@ Node-RED で Personality Insights による性格分析アプリを実装する�
     └─utils
            context.js         コンテキスト
 
-> HTML のみのため EJS は使用しておりません。
+> * EJS は使用しておりません。
 
 ## ルート (URLマッピング)  
 |Action|Method|処理|
