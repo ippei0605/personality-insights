@@ -1,5 +1,5 @@
-## Node-RED 版
+# IBM Bluemix - Personality Insights Sample (Node-RED 版)
 あああ
-![フロー](low.png)
+![フロー](flow.png)
 
-[戻る](../README.md)
+[フロー定義 (エクスポートした JSON)](flow.json)
