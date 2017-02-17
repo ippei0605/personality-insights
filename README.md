@@ -78,8 +78,7 @@ Node-RED で Personality Insights による性格分析アプリを実装する�
 |レスポンスタイム   |速い       |遅い (Node.js 版の約2倍)               |
 |エラー制御        |できる     |できない (多分 personality insights ノードがエラー時にコールバックしない実装) *1|
 
-    *1 Personality Insights は最低100語入力しないとエラーになります。　　
-       エラー制御できないため暫定対応としてクライアント JavaScript で文字数の判定をしています。
+> *1 Personality Insights は最低100語入力しないとエラーになります。エラー制御できないため暫定対応としてクライアント JavaScript で文字数の判定をしています。  
 
 ## まとめ
 * Node-RED でのハンズオンのため、テンプレート (HTML + JS) が参照するライブラリや CSS は全てホストされたものを選びました。
