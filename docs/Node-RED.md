@@ -57,10 +57,10 @@
 1. functionノードをダブルクリックし、以下の値を設定する。
   - Name：分析結果を編集する
   - Function：
-  
-        msg.payload = msg.insights;  
-        return msg;  
-        
+
+          msg.payload = msg.insights;  
+          return msg;  
+
 1. ノード一覧の『出力』カテゴリーから、『http response』ノードをドラッグ&ドロップする。
 1. httpノード → functionノード → personality insightsノード → functionノード → http responseノードの順にフローを接続する。
 1. 『デプロイ』ボタンをクリックする。
