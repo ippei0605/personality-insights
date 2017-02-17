@@ -44,8 +44,8 @@
   - Name：パラメータを取得する
   - Function：
 
-        msg.payload = msg.req.body.text;  
-        return msg;
+          msg.payload = msg.req.body.text;  
+          return msg;
              
 1. ノード一覧の『IBM Watson』カテゴリーから『personality insights』ノードをドラッグ&ドロップする。
 1. personality insightsノードをダブルクリックし、以下の値を設定する。なお、 サービスはバインド済みのため接続情報の設定項目は表示されません。
@@ -68,8 +68,8 @@
 ### 完成したフロー定義の例
 ![フロー](flow.png)
 
-エクスポートしたフロー定義は以下です。  
-[docs/flow.json](flow.json)
+> エクスポートしたフロー定義はこちらです。  
+>  - [docs/flow.json](flow.json)
 
 ### 性格分析アプリの実行
 1. ブラウザに新しいタブを開き、以下のURLにアクセスする。
