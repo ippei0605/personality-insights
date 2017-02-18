@@ -1,7 +1,8 @@
 # IBM Bluemix - Personality Insights Sample (Node.js 版)
 
 ## はじめに  
-Node-RED で Personality Insights による性格分析アプリを実装するハンズオンテキストを作成することになりました。折角の機会ですので、[Node-RED 版](docs/Node-RED.md)以外に Node.js 版を作成して整理することにしました。   
+Node-RED で Personality Insights による性格分析アプリを実装するハンズオンテキストを作成することになりました。折角の機会ですので、Node-RED 版以外に Node.js 版を作成して整理することにしました。   
+Node-RED 版 のハンズオンテキストは [こちら](docs/Node-RED.md) をクリックしてください。  
 
 ## 使い方  
 * 次のURLにアクセスしてください。
