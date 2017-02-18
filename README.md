@@ -90,7 +90,7 @@ Node-RED 版 のハンズオンテキストは [こちら](docs/Node-RED.md) を
   - d3 (本家のコードより)
   - personality-sunburst-chart　(本家のコードより)
   - d3-color　(本家のコードより)
-* /pi-analyze の呼出は Ajax と WebSocket で試行したところ同等だったため Ajax を選択しました。 (ボトルネックは Personality Insights サービス)  
+* /pi-analyze の呼出は HTTP (Ajax) と WebSocket で試行したところ同等だったため HTTP を選択しました。 (ボトルネックは Personality Insights サービス)  
 * Node-RED では REST や WebSocket の受口を簡単に用意できますが、サービスのスペック以上にノードのスペック (実装コード) に依存するので自由度は低いです。加えて、各サービスのアップデートと同期が取れていない場合もあるため注意が必要です。  
 * 継続的なアプリ開発においては、当初から Node.js で開発することをお勧めします。
 
