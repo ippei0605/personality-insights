@@ -82,7 +82,7 @@ Node-RED 版 のハンズオンテキストは [こちら](docs/Node-RED.md) を
 |エラー制御        |できる     |フロー全体を catch して msg.error を検査することはできる。後続ノードではできない。 *1 *2|
 
 > *1 personality insights ノードはエラー時に後続せずに固まります。(実装上の問題と思われます。)  
-> *2 Personality Insights は最低100語入力しないとエラーになります。後続でのエラー制御できないため暫定対応としてクライアント JavaScript で文字数の判定をしています。判定箇所は [こちら](public/pi-sample.html#L50) です。  
+> *2 Personality Insights は最低100語入力しないとエラーになります。後続ノードでのエラー制御はできないため暫定対応としてクライアント JavaScript で文字数の判定をしています。判定箇所は [こちら](public/pi-sample.html#L50) です。  
 
 ## まとめ
 * Node-RED でのハンズオンのため、テンプレート (HTML + JS) が参照するライブラリや CSS は全てホストされたものを選びました。
