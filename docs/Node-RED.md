@@ -63,6 +63,20 @@
 
 1. ノード一覧の『出力』カテゴリーから、『http response』ノードをドラッグ&ドロップする。
 1. httpノード → functionノード → personality insightsノード → functionノード → http responseノードの順にフローを接続する。
+1. ノード一覧の『入力』カテゴリーから、『catch』ノードをドラッグ&ドロップする。  
+1. catchノードをダブルクリックし、以下の値を設定する。
+  - Name：personality insights のエラーを制御する
+  - Catch errors from：selected nodes を選び、personality insights をチェック
+1. ノード一覧の『機能』カテゴリーから『function』ノードをドラッグ&ドロップする。
+1. functionノードをダブルクリックし、以下の値を設定する。
+  - Name：エラー結果を編集する
+  - Function：
+
+          msg.payload = msg.error.message;
+          msg.statusCode = 500;
+          return msg;  
+
+1. catchノード → functionノード → http responseノード (2ノードから接続) の順にフローを接続する。
 1. 『デプロイ』ボタンをクリックする。
 
 ### 完成したフロー定義の例
@@ -77,3 +91,9 @@
 1. 任意のテキストを入力して、『分析する』ボタンをクリックしてください。
   - 例) 第192回国会における安倍内閣総理大臣の所信表明演説 (全文をコピー&ペーストできます。)  
     - https://www.jimin.jp/news/parliament/133177.html
+
+### personality insights のエラーハンドリングについて
+* personality insights ノードはエラー時に後続ノードが実行されずに止まってしまいます。  
+* catch ノードを使用して、msg.error を検査することでエラーハンドリングができます。  
+* 当初は後続しないことに違和感があありました、こちらでも議論されており、Cool? なフローのようです。  
+  - https://github.com/node-red/node-red/issues/560
