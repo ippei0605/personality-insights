@@ -27,54 +27,57 @@
 1. Node-RED flow editor を開く。
 1. エディタ画面左側のノード一覧から、『入力』カテゴリーの『http』ノードをマウスでドラッグし、画面中央のキャンバスにドロップする。
 1. httpノードをダブルクリックし、以下の値を設定し、『完了』ボタンをクリック。
-  - メソッド：GET
-  - URL：/pi-sample
+  - メソッド: GET
+  - URL: /pi-sample
 1. ノード一覧の『機能』カテゴリーから、『template』ノードをドラッグ&ドロップする。
 1. templateノードをダブルクリックし、以下の設定を行う。
-  - Name：初期画面を表示する
-  - Template：ダウンロードした pi-sample.html をコピー＆ペースト
+  - Name: 初期画面を表示する
+  - Template: ダウンロードした pi-sample.html をコピー＆ペースト
 1. ノード一覧の『出力』カテゴリーから、『http response』ノードをドラッグ&ドロップする。
 1. httpノード → templateノード → http responseノードの順にフローを接続する。
 1. ノード一覧の『入力』カテゴリーから、『http』ノードをドラッグ&ドロップする。
 1. httpノードをダブルクリックし、以下の値を設定して『完了』をクリック。
-  - メソッド：POST
-  - URL：/pi-analyze
+  - メソッド: POST
+  - URL: /pi-analyze
 1. ノード一覧の『機能』カテゴリーから『function』ノードをドラッグ&ドロップする。
 1. functionノードをダブルクリックし、以下の値を設定する。
-  - Name：パラメータを取得する
-  - Function：
-
-          msg.payload = msg.req.body.text;  
-          return msg;
-             
+  - Name: パラメータを取得する
+  - Function:
+  ```javascript
+  msg.payload = msg.req.body.text;
+  return msg;
+  ```
+  
 1. ノード一覧の『IBM Watson』カテゴリーから『personality insights』ノードをドラッグ&ドロップする。
 1. personality insightsノードをダブルクリックし、以下の値を設定する。なお、 サービスはバインド済みのため接続情報の設定項目は表示されません。
-  - Input Text Language：Japanese
-  - Language For Response：Japanese
-  - Raw Scores：チェック
-  - Consumption Preferences：チェック
+  - Input Text Language: Japanese
+  - Language For Response: Japanese
+  - Raw Scores: チェック
+  - Consumption Preferences: チェック
 1. ノード一覧の『機能』カテゴリーから『function』ノードをドラッグ&ドロップする。
 1. functionノードをダブルクリックし、以下の値を設定する。
-  - Name：分析結果を編集する
-  - Function：
-
-          msg.payload = msg.insights;  
-          return msg;  
-
+  - Name: 分析結果を編集する
+  - Function:
+  ```javascript
+  msg.payload = msg.insights;
+  return msg;  
+  ```
+  
 1. ノード一覧の『出力』カテゴリーから、『http response』ノードをドラッグ&ドロップする。
 1. httpノード → functionノード → personality insightsノード → functionノード → http responseノードの順にフローを接続する。
 1. ノード一覧の『入力』カテゴリーから、『catch』ノードをドラッグ&ドロップする。  
 1. catchノードをダブルクリックし、以下の値を設定する。
-  - Name：personality insights のエラーを制御する
-  - Catch errors from：selected nodes を選び、personality insights をチェック
+  - Name: personality insights のエラーを制御する
+  - Catch errors from: selected nodes を選び、personality insights をチェック
 1. ノード一覧の『機能』カテゴリーから『function』ノードをドラッグ&ドロップする。
 1. functionノードをダブルクリックし、以下の値を設定する。
-  - Name：エラー結果を編集する
-  - Function：
-
-          msg.payload = msg.error.message;
-          msg.statusCode = 500;
-          return msg;  
+  - Name: エラー結果を編集する
+  - Function:
+  ```javascript
+  msg.payload = msg.error.message;
+  msg.statusCode = 500;
+  return msg;
+  ```
 
 1. catchノード → functionノード → http responseノード (2ノードから接続) の順にフローを接続する。
 1. 『デプロイ』ボタンをクリックする。
