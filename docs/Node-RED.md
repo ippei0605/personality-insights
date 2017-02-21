@@ -95,5 +95,5 @@
 ### personality insights のエラーハンドリングについて
 * personality insights ノードはエラー時に後続ノードが実行されずに止まってしまいます。  
 * catch ノードを使用して、msg.error を検査することでエラーハンドリングができます。  
-* 当初は後続しないことに違和感がありました、こちらでも議論されており、Cool? なフローのようです。  
+* 当初はノードが後続しないことに違和感がありましたが、こちらでも議論されており、Cool? なフローのようです。  
   - https://github.com/node-red/node-red/issues/560
