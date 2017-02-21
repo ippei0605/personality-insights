@@ -36,17 +36,25 @@ Node-RED 版 のハンズオンテキストは [こちら](docs/Node-RED.md) を
 1. PC のターミナルソフトを起動してください。
 (私は IntelliJ IDEA や Eclipse のターミナルを使っていますが、Windows の cmd 、Mac の　ターミナルなどで操作できます。)  
 
-1. ターミナルで、解凍したディレクトリ (personality-insights アプリのホーム) に移動してください。  
-コマンドは `cd personality-insights` です。
+1. ターミナルで、解凍したディレクトリ (personality-insights アプリのホーム) に移動してください。(コマンドは以下、$はコマンドプロンプトです。)  
+  ```
+  $ cd personality-insights
+  ```
 
 1. ターミナルで、Bluemix に接続してください。前述の条件の通り、Region が Sydney になっていることに注意してください。  
-コマンドは `cf api https://api.au-syd.bluemix.net` です。
+  ```
+  $ cf api https://api.au-syd.bluemix.net
+  ```
 
 1. ターミナルで、Bluemix にログインしてください。-u にはご自身の ID を指定してください。また、前述の条件の通り、Organization が jiec_gitou、Space が dev になっていることに注意してください。  
-コマンドは `cf login -u ippei0605@gmail.com -o jiec_gitou -s dev` です。
+  ```
+  $ cf login -u ippei0605@gmail.com -o jiec_gitou -s dev
+  ```
 
 1. ターミナルで、アプリをデプロイしてください。  
-コマンドは `cf push personality-insights-ippei0605` です。
+  ```
+  $ cf push personality-insights-ippei0605
+  ```
 
 ## ファイル構成  
     personality-insights
