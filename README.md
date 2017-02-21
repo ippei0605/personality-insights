@@ -48,7 +48,7 @@ Node-RED 版 のハンズオンテキストは [こちら](docs/Node-RED.md) を
 
         > cf login -u ippei0605@gmail.com -o jiec_gitou -s dev
 
-1. アプリをデプロイしてください。
+1. ターミナルで、アプリをデプロイしてください。
 
         > cf push personality-insights-ippei0605
 
