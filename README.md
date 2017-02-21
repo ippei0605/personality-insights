@@ -14,28 +14,37 @@ Node-RED 版 のハンズオンテキストは [こちら](docs/Node-RED.md) を
 ## セットアップ
 このアプリを IBM Bluemix にセットアップする手順を示します。
 
-1. personality-insights アプリをダウンロード (Download ZIP) して解凍してください。ディレクトリ名は personality-insights-master から personality-insights に変更してください。
+1. personality-insights アプリを PC にダウンロード (Download ZIP) して解凍してください。ディレクトリ名は personality-insights-master から personality-insights に変更してください。
 
-1. Bluemix コンソールから CFアプリケーション (Node.js) を作成してください。以下の ippei0605 はご自身のユーザ名などに変更してください。  
+1. Bluemix コンソールにログインしてください。ここでは次の条件で説明をします。ご自身のアカウント情報に読替えて手順を進めてください。  
+  - Region: Sydney
+  - Organization: jiec_gitou
+  - Space: dev
+  
+1. Bluemix コンソールで CFアプリケーション (Node.js) を作成してください。以下の ippei0605 はご自身のユーザ名などに変更してください。  
 アプリケーション名: personality-insights-ippei0605 (任意、前述の URL と同じ名前にならないようにしています。)  
 
     > 以降、personality-insights-ippei0605 で説明します。
 
-1. CF コマンド・ライン・インターフェースをインストールしていない場合は、インストールしてください。  
+1. PC に CF コマンド・ライン・インターフェースをインストールしていない場合は、インストールしてください。  
+(Bluemix コンソール、アプリケーション内の開始 (Getting Started) メニューにダウンロードボタンがあります。)  
 
-1. Personality Insights サービスを作成し、personality-insights-ippei0605 にバインドしてください。  
+1. Bluemix コンソールで Personality Insights サービスを作成し、personality-insights-ippei0605 にバインドしてください。  
 サービス名: 任意  
 プラン: 任意 (本アプリでは tiered を選択)  
 
-1. 解凍したディレクトリ (personality-insights アプリのホーム) に移動してください。
+1. PC のターミナルソフトを起動してください。
+(私は IntelliJ IDEA や Eclipse のターミナルを使っていますが、Windows の cmd 、Mac の　ターミナルなどで操作できます。)  
+
+1. ターミナルで、解凍したディレクトリ (personality-insights アプリのホーム) に移動してください。
 
         > cd personality-insights
 
-1. Bluemix に接続してください。
+1. ターミナルで、Bluemix に接続してください。前述の条件の通り、Region が Sydney になっていることに注意してください。  
 
         > cf api https://api.au-syd.bluemix.net
     
-1. Bluemix にログインしてください。
+1. ターミナルで、Bluemix にログインしてください。-u にはご自身の ID を指定してください。また、前述の条件の通り、Organization が jiec_gitou、Space が dev になっていることに注意してください。
 
         > cf login -u ippei0605@gmail.com -o jiec_gitou -s dev
 
