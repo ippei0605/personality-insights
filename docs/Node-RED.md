@@ -44,10 +44,24 @@
   - Name: 初期画面を表示する
   - Set property: msg.payload (デフォルト設定)
   - Template: ダウンロードした pi-sample.html をコピー＆ペースト
-    - 10行目 <link rel="stylesheet" href="/mybootstrap.css"> を削除する。 
-    - 19行目 <script src="/pi-sample.js"></script> を削除する。 
+    - 10行目を削除する。
+    ```html
+    <link rel="stylesheet" href="/mybootstrap.css">
+    ```
+    - 10行目に次を挿入する。 (Node-RED Mustache template の記法に変更)
+    ```html
+    <style>{{{payload.style}}}</style>
+    ```
+    - 19行目を削除する。
+    ```html
+    <script src="/pi-sample.js"></script> 
+    ```
+    - 19行目に次を挿入する。 (Node-RED Mustache template の記法に変更)
+    ```html
+    <script>{{{payload.script}}}</script>
+    ```
 1. ノード一覧の『出力』カテゴリーから、『http response』ノードをドラッグ&ドロップする。
-1. httpノード → templateノード → http responseノードの順にフローを接続する。
+1. httpノード → templateノード → templateノード → templateノード → http responseノードの順にフローを接続する。
 1. ノード一覧の『入力』カテゴリーから、『http』ノードをドラッグ&ドロップする。
 1. httpノードをダブルクリックし、以下の値を設定して『完了』をクリック。
   - メソッド: POST
