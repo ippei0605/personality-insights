@@ -71,7 +71,9 @@ Node-RED 版 のハンズオンテキストは [こちら](docs/Node-RED.md) を
     │      
     ├─public
     │      favicon.ico
-    │      pi-sample.html     画面
+    │      mybootstrap.css    サンプル画面の CSS
+    │      pi-sample.html     サンプル画面の HTML
+    │      pi-sample.js       サンプル画面の Javascript
     │      
     ├─routes
     │      index.js           ルーティング
