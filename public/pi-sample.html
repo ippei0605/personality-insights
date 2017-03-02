@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
     <title>Personality Insights Sample</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
-            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/mybootstrap.css">
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
     <script src="https://unpkg.com/personality-sunburst-chart@2.0.4/dist/index.js"></script>
     <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="/pi-sample.js"></script>
 </head>
 
 <body>
@@ -37,35 +39,6 @@
         <div class="tab-pane" id="resultId"></div>
     </div>
 </div>
-
-<script>
-    $(document).ready(function () {
-        var image = 'https://personality-insights-livedemo.mybluemix.net/images/service-icon.svg';
-        var chart = new PersonalitySunburstChart({"selector": "#chartId", "version": "v3"});
-
-        $('#analyzeId').on('click', function () {
-            var resultId = $('#resultId');
-            var statusId = $('#statusId');
-            var text = $('#textId').val();
-            statusId.html('<p class="text-info">分析中です・・・</p>');
-            $.ajax({
-                "type": "POST",
-                "url": "/pi-analyze",
-                "data": {
-                    "text": text
-                }
-            }).done(function (value) {
-                chart.show(value, image);
-                statusId.append('<p class="text-info">・・・完了しました。</p>');
-            }).fail(function (value) {
-                statusId.append('<p class="text-danger">・・・エラーが発生しました。</p>');
-            }).always(function (value) {
-                resultId.html('<pre>' + JSON.stringify(value, undefined, 2) + '</pre>');
-            });
-            return false;
-        });
-    });
-</script>
 
 </body>
 </html>

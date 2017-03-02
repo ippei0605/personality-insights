@@ -31,8 +31,21 @@
   - URL: /pi-sample
 1. ノード一覧の『機能』カテゴリーから、『template』ノードをドラッグ&ドロップする。
 1. templateノードをダブルクリックし、以下の設定を行う。
+  - Name: CSS
+  - Set property: msg.payload.style  (msg. はドロップダウンメニュー)
+  - Template: ダウンロードした mybootstrap.css をコピー＆ペースト
+1. ノード一覧の『機能』カテゴリーから、『template』ノードをドラッグ&ドロップする。
+1. templateノードをダブルクリックし、以下の設定を行う。
+  - Name: JavaScript
+  - Set property: msg.payload.script  (msg. はドロップダウンメニュー)
+  - Template: ダウンロードした pi-sample.js をコピー＆ペースト
+1. ノード一覧の『機能』カテゴリーから、『template』ノードをドラッグ&ドロップする。
+1. templateノードをダブルクリックし、以下の設定を行う。
   - Name: 初期画面を表示する
+  - Set property: msg.payload (デフォルト設定)
   - Template: ダウンロードした pi-sample.html をコピー＆ペースト
+    - 10行目 <link rel="stylesheet" href="/mybootstrap.css"> を削除する。 
+    - 19行目 <script src="/pi-sample.js"></script> を削除する。 
 1. ノード一覧の『出力』カテゴリーから、『http response』ノードをドラッグ&ドロップする。
 1. httpノード → templateノード → http responseノードの順にフローを接続する。
 1. ノード一覧の『入力』カテゴリーから、『http』ノードをドラッグ&ドロップする。
