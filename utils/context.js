@@ -5,10 +5,12 @@
  * @author Ippei SUZUKI
  */
 
+'use strict';
+
 // モジュールを読込む。
-var cfenv = require('cfenv');
-var vcapServices = require('vcap_services');
-var PersonalityInsights = require('watson-developer-cloud/personality-insights/v3');
+const cfenv = require('cfenv');
+const vcapServices = require('vcap_services');
+const PersonalityInsights = require('watson-developer-cloud/personality-insights/v3');
 
 /** 環境変数 */
 exports.appEnv = cfenv.getAppEnv();
@@ -17,7 +19,7 @@ exports.appEnv = cfenv.getAppEnv();
 exports.path = require('path');
 
 // Watson Personality Insights Credentials
-var piCreds = vcapServices.getCredentials('personality_insights');
+const piCreds = vcapServices.getCredentials('personality_insights');
 piCreds.version_date = '2016-10-20';
 
 /** Watson Personality Insights */

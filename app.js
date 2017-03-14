@@ -3,16 +3,18 @@
  * @author Ippei SUZUKI
  */
 
+'use strict';
+
 // モジュールを読込む。
-var context = require('./utils/context');
-var express = require('express');
-var logger = require('morgan');
-var bodyParser = require('body-parser');
-var favicon = require('serve-favicon');
-var routes = require('./routes');
+const context = require('./utils/context');
+const express = require('express');
+const logger = require('morgan');
+const bodyParser = require('body-parser');
+const favicon = require('serve-favicon');
+const routes = require('./routes');
 
 // アプリケーションを作成する。
-var app = express();
+const app = express();
 
 // ミドルウェアを設定する。
 app.use('/', express.static(__dirname + '/public'));
@@ -25,6 +27,6 @@ app.get('/', routes.index);
 app.post('/pi-analyze', routes.piAnalyze);
 
 // リクエトを受付ける。
-app.listen(context.appEnv.port, '0.0.0.0', function () {
+app.listen(context.appEnv.port, '0.0.0.0', () => {
     console.log('server starting on ' + context.appEnv.url);
 });

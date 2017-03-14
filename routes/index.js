@@ -4,11 +4,13 @@
  * @author Ippei SUZUKI
  */
 
+'use strict';
+
 // モジュールを読込む。
-var context = require('../utils/context');
+const context = require('../utils/context');
 
 /** 画面を表示する。 */
-exports.index = function (req, res) {
+exports.index = (req, res) => {
     res.redirect('/pi-sample.html');
 };
 
@@ -16,8 +18,8 @@ exports.index = function (req, res) {
  * プロフィールを返す。
  * @see {https://www.ibm.com/watson/developercloud/personality-insights/api/v3/?node#methods}
  */
-exports.piAnalyze = function (req, res) {
-    var params = {
+exports.piAnalyze = (req, res) => {
+    let params = {
         "text": req.body.text,
         "consumption_preferences": true,
         "raw_scores": true,
@@ -28,7 +30,7 @@ exports.piAnalyze = function (req, res) {
             "accept-language": "ja"
         }
     };
-    context.pi.profile(params, function (error, response) {
+    context.pi.profile(params, (error, response) => {
             if (error) {
                 console.log('Error:', error);
                 res.status(500).send(error);
