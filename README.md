@@ -6,7 +6,7 @@ Node-RED 版 のハンズオンテキストは [こちら](docs/Node-RED.md) を
 
 ## 使い方  
 * 次のURLにアクセスしてください。
-  - https://310-o970605-personality-insights.au-syd.mybluemix.net/
+  - https://b20-o970605-personality-insights.eu-gb.mybluemix.net/
 * テキストエリアに任意の文章を入力して、「分析する」ボタンをクリックしてください。
   - 例) 第192回国会における安倍内閣総理大臣の所信表明演説 (全文をコピー&ペーストできます。)
     - https://www.jimin.jp/news/parliament/133177.html
@@ -17,9 +17,9 @@ Node-RED 版 のハンズオンテキストは [こちら](docs/Node-RED.md) を
 1. personality-insights アプリを PC にダウンロード (Download ZIP) して解凍してください。ディレクトリ名は personality-insights-master から personality-insights に変更してください。
 
 1. Bluemix コンソールにログインしてください。ここでは次の条件で説明をします。ご自身のアカウント情報に読替えて手順を進めてください。  
-  - Region: Sydney
-  - Organization: jiec_gitou
-  - Space: dev
+    - Region: United Kingdom
+    - Organization: jiec_rd
+    - Space: dev
   
 1. Bluemix コンソールで CFアプリケーション (Node.js) を作成してください。以下の ippei0605 はご自身のユーザ名などに変更してください。  
 アプリケーション名: personality-insights-ippei0605 (任意、前述の URL と同じ名前にならないようにしています。)  
@@ -43,12 +43,12 @@ Node-RED 版 のハンズオンテキストは [こちら](docs/Node-RED.md) を
 
 1. ターミナルで、Bluemix に接続してください。前述の条件の通り、Region が Sydney になっていることに注意してください。  
   ```
-  $ cf api https://api.au-syd.bluemix.net
+  $ cf api https://api.eu-gb.bluemix.net
   ```
 
-1. ターミナルで、Bluemix にログインしてください。-u にはご自身の ID を指定してください。また、前述の条件の通り、Organization が jiec_gitou、Space が dev になっていることに注意してください。  
+1. ターミナルで、Bluemix にログインしてください。-u にはご自身の ID を指定してください。また、前述の条件の通り、Organization が jiec_rd、Space が dev になっていることに注意してください。  
   ```
-  $ cf login -u ippei0605@gmail.com -o jiec_gitou -s dev
+  $ cf login -u ippei0605@gmail.com -o jiec_rd -s dev
   ```
 
 1. ターミナルで、アプリをデプロイしてください。  
